@@ -1,8 +1,8 @@
-# .NET MAUI Login / Logout / Biometric Auth Workflow
+# Web App Login / Logout / Biometric Auth Workflow
 
 ```mermaid
 flowchart TD
-    Start([App launch]) --> CheckSession{Existing session?}
+    Start([Web app launch / page load]) --> CheckSession{Existing session?}
     CheckSession -- Yes --> MainApp[Main app screen]
     CheckSession -- No --> LoginScreen[Login screen]
 
@@ -50,8 +50,8 @@ flowchart TD
 ```
 
 ## Notes
-- Use `SecureStorage` for tokens/refresh tokens and a secure flag for biometric enrollment.
-- In .NET MAUI, use platform biometric APIs or a cross-platform plugin like `Plugin.Fingerprint` / `Community Toolkit` for biometric prompt.
-- On successful email/password login, optionally enroll biometrics to simplify future logins.
-- Logout should clear session state and remove any local auth tokens.
-- Handle session expiration and biometric lockout by returning to the login screen with fallback to credentials.
+- Use secure cookies or secure client-side storage for tokens/refresh tokens and a safe enrollment flag for biometric login.
+- In a web-first architecture, handle biometric prompt on the client using WebAuthn or platform-specific browser/mobile support; backend should support token refresh and biometric-enabled login state.
+- On successful email/password login, optionally offer biometric enrollment for faster future access.
+- Logout should clear session state, revoke tokens, and return the user to the login screen.
+- Handle session expiration and biometric lockout by returning to the login screen with a fallback to credentials.

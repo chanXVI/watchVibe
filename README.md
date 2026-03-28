@@ -1,6 +1,6 @@
 # dotnetWatchVibe
 
-`dotnetWatchVibe` is a planned .NET MAUI application for watch collectors, starting with a Rolex-focused experience.
+`dotnetWatchVibe` is a planned Python backend and responsive web application for watch collectors, starting with a Rolex-focused experience.
 
 The goal of the app is to help users:
 
@@ -8,7 +8,7 @@ The goal of the app is to help users:
 - Record ownership history and timeline events
 - Store notes, photos, and service details
 - Browse reference information and model history
-- Support login, logout, and biometric authentication
+- Support login, logout, and biometric-ready authentication flows
 
 ## Current Status
 
@@ -23,20 +23,22 @@ This repository is currently in the planning stage. The main content today is pr
 - Login/logout flow
 - Optional biometric authentication
 
+## Tech Direction
+
+- Python backend with REST/GraphQL API
+- Responsive web front end (React, Vue, Svelte, or PWA)
+- Secure token storage and session-based auth
+- Biometric auth handled by the client; backend supports token refresh and auth state
+
 ## Project Docs
 
 - `planDocs/rolex-watch-collection-history-map.md`
 - `planDocs/login-workflow.md`
-
-## Tech Direction
-
-- .NET MAUI
-- Secure token storage
-- Optional biometric authentication support
+- `planDocs/python-backend-web-first-plan.md`
 
 ## Next Steps
 
-- Scaffold the .NET MAUI app
-- Implement authentication flow
-- Build collection and reference data models
-- Create the first UI screens
+- Start the Python API and auth design
+- Define collection and reference data models
+- Build a responsive web UI for login, collection browsing, and watch details
+- Keep the API ready for future mobile clients
